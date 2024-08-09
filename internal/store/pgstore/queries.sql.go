@@ -54,7 +54,7 @@ WHERE
     room_id = $1
 `
 
-func (q *Queries) GetRoomMessage(ctx context.Context, roomID uuid.UUID) ([]Message, error) {
+func (q *Queries) GetRoomMessages(ctx context.Context, roomID uuid.UUID) ([]Message, error) {
 	rows, err := q.db.Query(ctx, getRoomMessage, roomID)
 	if err != nil {
 		return nil, err
